@@ -408,13 +408,13 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
   <p class="chooser__lede">Tap a branch to order on its app.</p>
   <div class="chooser__isle chooser__isle--samui">
     <p>Koh Samui &middot; <b>GrabFood</b></p>
-    <a class="chooser__b" href="https://app.grab.com/s/g5Jw4bQ9" target="_blank" rel="noopener"><span>Lamai</span><small>Daily 15:00 to 22:30<br>Sundays from 12:00</small><span class="sr-only"> (opens GrabFood in a new tab)</span></a>
-    <a class="chooser__b" href="https://app.grab.com/s/3viSvutK" target="_blank" rel="noopener"><span>Nathon</span><small>12:00 to 21:00</small><span class="sr-only"> (opens GrabFood in a new tab)</span></a>
+    <a class="chooser__b" href="https://app.grab.com/s/g5Jw4bQ9" target="_blank" rel="noopener"><span>Lamai</span><small data-hours="15:00-22:30" data-sun="12:00-22:30">Daily 15:00 to 22:30<br>Sundays from 12:00</small><span class="sr-only"> (opens GrabFood in a new tab)</span></a>
+    <a class="chooser__b" href="https://app.grab.com/s/3viSvutK" target="_blank" rel="noopener"><span>Nathon</span><small data-hours="12:00-21:00">12:00 to 21:00</small><span class="sr-only"> (opens GrabFood in a new tab)</span></a>
   </div>
   <div class="chooser__isle">
     <p>Koh Phangan &middot; <b>KPG Delivery</b></p>
-    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener"><span>Chaloklum</span><small>12:00 to 22:00</small><span class="sr-only"> (opens KPG Delivery in a new tab)</span></a>
-    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener"><span>Thong Sala</span><small>12:00 to 22:00</small><span class="sr-only"> (opens KPG Delivery in a new tab)</span></a>
+    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener"><span>Chaloklum</span><small data-hours="12:00-22:00">12:00 to 22:00</small><span class="sr-only"> (opens KPG Delivery in a new tab)</span></a>
+    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener"><span>Thong Sala</span><small data-hours="12:00-22:00">12:00 to 22:00</small><span class="sr-only"> (opens KPG Delivery in a new tab)</span></a>
   </div>
 </dialog>
 
@@ -423,7 +423,6 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
 <!-- Motion libraries, self-hosted. If they fail to load, the page stays fully visible and static. -->
 <script src="js/vendor/gsap.min.js" defer></script>
 <script src="js/vendor/ScrollTrigger.min.js" defer></script>
-<script src="js/vendor/lenis.min.js" defer></script>
 <script src="js/main.js"></script>
 <script src="js/motion.js" defer></script>
 </body>

@@ -488,3 +488,7 @@ html:not(.motion) .fab { transition: none; }
 .btn--kpg { outline: 1px solid color-mix(in srgb, var(--on-red) 70%, transparent); outline-offset: -5px; }
 .btn--kpg:hover { outline-color: color-mix(in srgb, var(--black) 45%, transparent); }
 .btn--kpg:focus-visible { outline: 2px solid var(--white); outline-offset: 4px; }
+
+/* Chooser open/closed line */
+.chooser__b small .now { display: inline-block; margin-bottom: 4px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; color: var(--mute); }
+.chooser__b small .now.is-open { color: var(--acc); }

@@ -238,3 +238,27 @@
   });
   document.querySelectorAll('.hero__cta, .order__cols, .foot').forEach(el => io.observe(el));
 })();
+
+/* Chooser: "Open now" or when it opens next, in island time (Asia/Bangkok), worked out each time the chooser opens */
+(() => {
+  const chooser = document.getElementById('chooser'); if (!chooser) return;
+  const mins = t => { const [h, m] = t.split(':'); return h * 60 + +m; };
+  const update = () => {
+    const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Bangkok', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+      .formatToParts(new Date()).map(p => [p.type, p.value]));
+    const now = mins(parts.hour + ':' + parts.minute), sun = parts.weekday === 'Sun', sat = parts.weekday === 'Sat';
+    chooser.querySelectorAll('small[data-hours]').forEach(el => {
+      const span = d => (d && el.dataset.sun) || el.dataset.hours;   // d: is it Sunday
+      const [o, c] = span(sun).split('-').map(mins);
+      let txt, open = false;
+      if (now >= o && now < c) { open = true; txt = `Open now, until ${span(sun).split('-')[1]}`; }
+      else if (now < o) txt = `Closed, opens ${span(sun).split('-')[0]}`;
+      else txt = `Closed, opens tomorrow ${span(sat).split('-')[0]}`;
+      let b = el.querySelector('.now'); if (!b) { b = document.createElement('b'); el.prepend(b, document.createElement('br')); }
+      b.className = 'now' + (open ? ' is-open' : ''); b.textContent = txt;
+    });
+  };
+  // showModal is called from several places; refresh just before any of them opens it
+  if (chooser.showModal) { const show = chooser.showModal.bind(chooser); chooser.showModal = () => { update(); show(); }; }
+  update();
+})();

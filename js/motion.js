@@ -11,7 +11,7 @@
   /* Smooth scrolling on desktop only */
   const hh = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hh'));
   let lenis = null;
-  if (desk && window.Lenis) {
+  const startLenis = () => {
     lenis = window.__lenis = new Lenis({ lerp: .1 });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(t => lenis.raf(t * 1000));
@@ -24,8 +24,9 @@
       t.focus({ preventScroll: true });
       history.pushState(null, '', href);
     }));
-  }
-
+  };
+  // phones never download Lenis (13 KB); desktops fetch it here, after the page has loaded
+  if (desk) { const s = document.createElement('script'); s.src = 'js/vendor/lenis.min.js'; s.onload = startLenis; document.head.append(s); }
 
   /* Headings: rise line by line through a mask */
   $$('.sec-h, .roast__h').forEach(h => {
