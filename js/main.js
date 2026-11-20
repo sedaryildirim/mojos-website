@@ -179,3 +179,44 @@
 (() => {
   const html = document.documentElement; if (html.classList.contains('motion')) html.classList.add('drop');
 })();
+
+/* Swipe hint on the branches run: one small nudge when it comes into view, gone once you swipe; the edge fade goes at the end.
+   Scroll snapping rests the run a little way in on load, so a swipe is measured from where it rests, not from 0 */
+(() => {
+  const tour = document.querySelector('.tour'), vp = document.querySelector('.tour__viewport'), hint = document.querySelector('.swipe');
+  if (!tour || !vp || !hint) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, track = vp.firstElementChild;
+  let rest = null, nudging = false;
+  const onScroll = () => {
+    if (!nudging && rest !== null && Math.abs(vp.scrollLeft - rest) > 24) hint.classList.add('is-done');
+    vp.classList.toggle('at-end', vp.scrollLeft + vp.clientWidth >= vp.scrollWidth - 4);
+  };
+  vp.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  addEventListener('load', () => setTimeout(() => { rest = vp.scrollLeft; }, 400));
+  if (reduce || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => {
+    if (!es[0].isIntersecting || tour.classList.contains('is-pinned') || hint.classList.contains('is-done')) return;
+    io.disconnect();
+    // snapping would chase the moving cards and shift the run: off for the nudge, then back where it was
+    const at = vp.scrollLeft; nudging = true; vp.style.scrollSnapType = 'none';
+    track.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-56px)' }, { transform: 'translateX(0)' }],
+                  { duration: 1200, delay: 300, easing: 'cubic-bezier(.22,.7,.2,1)' })
+      .finished.then(() => { vp.scrollLeft = at; vp.style.scrollSnapType = ''; setTimeout(() => { rest = vp.scrollLeft; nudging = false; }, 150); });
+  }, { threshold: .45 });
+  io.observe(vp);
+})();
+
+/* Food spotlight: the dish nearest the middle of the screen lights up and its photo shows */
+(() => {
+  const steps = [...document.querySelectorAll('.spot__step')], imgs = [...document.querySelectorAll('.spot__img')];
+  if (!steps.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    steps.forEach(s => s.classList.toggle('is-on', s === e.target));
+    imgs.forEach(im => im.classList.toggle('is-on', im.dataset.i === e.target.dataset.i));
+  }), { rootMargin: '-45% 0px -45% 0px' });
+  steps.forEach(s => io.observe(s));
+  // phones: each dish rises in once, as it comes into view
+  const seen = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-seen'); seen.unobserve(e.target); } }), { threshold: .15 });
+  steps.forEach(s => seen.observe(s));
+})();

@@ -425,3 +425,46 @@ html.menu-open { overflow: hidden; }
 .motion.drop .sig__tag { animation: track 1.2s 1.25s var(--ease) backwards; }
 .motion.drop .hero__count { animation: fade 1s 1.55s var(--ease) backwards; }
 .motion.drop .hero__cta { animation: fade-up 1s 1.7s var(--ease) backwards; }
+
+/* ---------- Swipe hint on the branches run (20 Nov): only where the run scrolls sideways; goes once you swipe ---------- */
+.swipe { display: flex; align-items: center; justify-content: flex-end; gap: 12px; padding: 0 var(--pad); margin: 22px 0 -22px;
+  font: 500 .75rem/1 var(--cond); letter-spacing: .28em; text-transform: uppercase; color: var(--soft); transition: opacity .6s var(--ease); }
+.swipe i { position: relative; width: 44px; height: 1px; background: var(--red); }
+.swipe i::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-top: 1px solid var(--red); border-right: 1px solid var(--red); transform: rotate(45deg); }
+.motion .swipe i { animation: swipe-nudge 1.8s var(--ease) infinite; }
+@keyframes swipe-nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
+.swipe.is-done { opacity: 0; }
+.tour.is-pinned .swipe { display: none; }
+/* the cards run off the right edge: fade it, until the end is reached */
+.tour:not(.is-pinned) .tour__viewport { -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent); mask-image: linear-gradient(90deg, #000 82%, transparent); }
+.tour:not(.is-pinned) .tour__viewport.at-end { -webkit-mask-image: none; mask-image: none; }
+
+/* ---------- Food spotlight (owner chose it, 20 Nov 2026): a medium photo that stays put and changes as the dishes scroll past.
+   Flat: no shadows; the photo crossfades. Phones: each dish shows its own photo. ---------- */
+.spot-sec { padding: clamp(80px, 10vw, 140px) 0; border-top: 1px solid var(--hair); }
+.spot { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(30px, 6vw, 100px); max-width: 1200px; margin: 0 auto; padding: 0 var(--pad); }
+.spot__stage { position: sticky; top: calc(var(--hh) + 40px); align-self: start; aspect-ratio: 1; max-height: min(62vh, 500px); border-radius: 20px; overflow: hidden; background: var(--black); }
+.spot__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity .8s var(--ease), transform 1.4s var(--ease); }
+.spot__img.is-on { opacity: 1; transform: none; }
+.spot__step { min-height: 52vh; display: flex; flex-direction: column; justify-content: center; padding: 30px 0; border-top: 1px solid var(--hair); opacity: .3; transition: opacity .6s var(--ease); }
+.spot__step:first-child { border-top: 0; }
+.spot__step.is-on { opacity: 1; }
+.spot__no { font: 500 .78rem/1 var(--cond); letter-spacing: .3em; color: var(--red-t); }
+.spot__n { margin-top: 14px; font: 400 clamp(2.4rem, 4.4vw, 3.8rem)/.92 var(--display); letter-spacing: .02em; }
+.spot__meta { display: flex; gap: 14px; align-items: baseline; margin-top: 12px; }
+.spot__p { font: 500 1.3rem/1 var(--cond); color: var(--red-t); }
+.spot__tag { font: 500 .72rem/1 var(--cond); letter-spacing: .22em; text-transform: uppercase; color: var(--acc); }
+.spot__d { margin-top: 12px; max-width: 40ch; color: var(--soft); }
+.spot__inline { display: none; }
+.spot__cta { margin-top: 40px; text-align: center; }
+@media (max-width: 759px) {
+  .spot { grid-template-columns: 1fr; }
+  .spot__stage { display: none; }
+  .spot__step { min-height: 0; padding: 34px 0; opacity: 1; }
+  .spot__inline { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; margin: 16px 0 4px; }
+  /* phones: each dish rises in as it scrolls into view */
+  .motion .spot__step { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .9s var(--ease); }
+  .motion .spot__step.is-seen { opacity: 1; transform: none; }
+}
+html:not(.motion) .spot__img, html:not(.motion) .spot__step { transition: none; }
+html:not(.motion) .spot__step { opacity: 1; }

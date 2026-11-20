@@ -185,6 +185,63 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
   <p class="menu__legend"><b class="hot">Hot</b> spicy &nbsp;&nbsp; <b class="veg">V</b> vegetarian &nbsp;&nbsp; Prices in baht, including VAT. Tell us about any allergies.</p>
 </section>
 
+<!-- 4b. FOOD SPOTLIGHT: one dish at a time, the photo changes as you scroll (owner chose Spotlight, 20 Nov 2026) -->
+<section class="spot-sec" id="food" aria-labelledby="food-title">
+  <header class="sec-head reveal">
+    <p class="kicker">Fresh off the grill</p>
+    <h2 id="food-title" class="sec-h">House favourites</h2>
+    <p class="sec-lede">The ones people come back for.</p>
+  </header>
+  <div class="spot">
+    <div class="spot__stage" aria-hidden="true"><img class="spot__img is-on" data-i="0" src="img/food/big-boy.jpg" alt="" width="800" height="800" decoding="async"><img class="spot__img" data-i="1" src="img/food/austin.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"><img class="spot__img" data-i="2" src="img/food/bayou.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"><img class="spot__img" data-i="3" src="img/food/brisket-fries.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"><img class="spot__img" data-i="4" src="img/food/brisket-taco.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"><img class="spot__img" data-i="5" src="img/food/nashville-hot-wings.jpg" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+    <ol class="spot__list" role="list">
+        <li class="spot__step is-on" data-i="0">
+          <span class="spot__no">01 / 06</span>
+          <img class="spot__inline" src="img/food/big-boy.jpg" alt="Big Boy" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="spot__n">Big Boy</h3>
+          <p class="spot__meta"><span class="spot__p">450</span></p>
+          <p class="spot__d">triple patty, american cheese, bacon, onion jam, pickles, lettuce, tomato, mustard, ketchup &amp; garlic mayo</p>
+        </li>
+        <li class="spot__step" data-i="1">
+          <span class="spot__no">02 / 06</span>
+          <img class="spot__inline" src="img/food/austin.jpg" alt="Austin" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="spot__n">Austin</h3>
+          <p class="spot__meta"><span class="spot__p">360</span><span class="spot__tag">House favourite</span></p>
+          <p class="spot__d">single patty, pulled brisket, american cheese, bacon, onion rings, pickle, chipotle &amp; bbq sauce</p>
+        </li>
+        <li class="spot__step" data-i="2">
+          <span class="spot__no">03 / 06</span>
+          <img class="spot__inline" src="img/food/bayou.jpg" alt="Bayou" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="spot__n">Bayou</h3>
+          <p class="spot__meta"><span class="spot__p">290</span><span class="spot__tag">Hot</span></p>
+          <p class="spot__d">fried chicken breast, chilli dust, nashville hot honey, coleslaw, pickles &amp; red onion</p>
+        </li>
+        <li class="spot__step" data-i="3">
+          <span class="spot__no">04 / 06</span>
+          <img class="spot__inline" src="img/food/brisket-fries.jpg" alt="Brisket Fries" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="spot__n">Brisket Fries</h3>
+          <p class="spot__meta"><span class="spot__p">340</span><span class="spot__tag">House favourite</span></p>
+          <p class="spot__d">pulled brisket, chipotle sauce, bbq sauce &amp; fried shallots</p>
+        </li>
+        <li class="spot__step" data-i="4">
+          <span class="spot__no">05 / 06</span>
+          <img class="spot__inline" src="img/food/brisket-taco.jpg" alt="Brisket Taco" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="spot__n">Brisket Taco</h3>
+          <p class="spot__meta"><span class="spot__p">180</span></p>
+          <p class="spot__d">pulled brisket, fried cheese tortilla, salsa roja, red onion, jalapeños &amp; lime</p>
+        </li>
+        <li class="spot__step" data-i="5">
+          <span class="spot__no">06 / 06</span>
+          <img class="spot__inline" src="img/food/nashville-hot-wings.jpg" alt="Nashville Hot Wings" width="800" height="800" loading="lazy" decoding="async">
+          <h3 class="spot__n">Nashville Hot Wings</h3>
+          <p class="spot__meta"><span class="spot__p">220</span><span class="spot__tag">Hot</span></p>
+          <p class="spot__d">buttermilk fried wings, chilli dust, nashville hot honey, fried shallots &amp; ranch</p>
+        </li>
+    </ol>
+  </div>
+  <p class="spot__cta"><a class="btn btn--red" href="#order" data-open-order>Order now</a></p>
+</section>
+
 <!-- 5. SUNDAY ROAST, LAMAI -->
 <section class="roast" id="roast" aria-labelledby="roast-title">
   <div class="roast__frame">
@@ -244,6 +301,7 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
       </div>
     </div>
 
+    <p class="swipe" aria-hidden="true"><span>Swipe</span><i></i></p>
     <div class="tour__viewport" role="region" tabindex="0" aria-label="Branches, scroll sideways">
       <ul class="tour__track" role="list">
         <li class="isle-card" aria-hidden="true"><span class="isle-card__isle">Koh Phangan</span><span class="isle-card__app">KPG Delivery</span></li>
