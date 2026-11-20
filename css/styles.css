@@ -72,7 +72,7 @@ section, [id] { scroll-margin-top: var(--hh); }
 .link:hover { border-color: var(--acc); color: var(--acc); }
 
 /* ---------- Header ---------- */
-.top { position: fixed; inset: 0 0 auto; z-index: 50; height: var(--hh); display: flex; align-items: center; gap: 32px; padding: 0 var(--pad); background: color-mix(in srgb, var(--black) 90%, transparent); border-bottom: 1px solid var(--hair); }
+.top { position: fixed; inset: 0 0 auto; z-index: 50; height: var(--hh); display: flex; align-items: center; gap: 32px; padding: 0 var(--pad); background: var(--black); border-bottom: 1px solid var(--hair); }   /* solid, so nothing shows through (owner, 20 Nov 2026) */
 .top__logo { position: relative; display: block; width: 84px; padding-bottom: 7px; }
 .top__logo::after, .foot__logo::after { content: ''; position: absolute; left: 24%; right: 24%; bottom: 0; height: 2px; background: var(--red); }
 .top__nav { display: none; margin-left: auto; gap: 34px; }
@@ -351,7 +351,7 @@ html.lenis, html.lenis body { height: auto; }
 .hero__photo::after { content: ""; position: absolute; inset: 0;
   background: radial-gradient(ellipse 60% 55% at 50% 45%, color-mix(in srgb, var(--black) 55%, transparent), transparent 75%),
               linear-gradient(180deg, color-mix(in srgb, var(--black) 35%, transparent) 0%, transparent 30%, transparent 60%, var(--black) 100%); }
-[data-palette="cream"] .hero__photo img { opacity: .22; filter: grayscale(.35) contrast(.95); }
+[data-palette="cream"] .hero__photo img { opacity: .36; filter: none; }   /* owner, 20 Nov 2026: stronger, full colour */
 
 /* ---------- Phone menu: full-screen poster (owner chose it, 20 Nov). Hidden from 760px, where the header nav shows ---------- */
 .burger { display: none; flex: none; width: 44px; height: 44px; margin-right: -10px; border: 0; background: none; cursor: pointer; position: relative; color: var(--white); }
@@ -492,3 +492,6 @@ html:not(.motion) .fab { transition: none; }
 /* Chooser open/closed line */
 .chooser__b small .now { display: inline-block; margin-bottom: 4px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; color: var(--mute); }
 .chooser__b small .now.is-open { color: var(--acc); }
+
+/* Phones and tablets: the run opens straight on the first branch; each card already names its island (owner, 20 Nov 2026) */
+@media (max-width: 999px) { .isle-card { display: none; } }
