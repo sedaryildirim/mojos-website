@@ -88,7 +88,7 @@
   mt.to(paths, { strokeDashoffset: 0, duration: 2.2, stagger: .3, ease: 'power2.inOut' })
     .from('.map__depth, .map__ferry, .map__note-t, .map__sea, .map__deco', { opacity: 0, duration: 1.2, stagger: .1 }, '-=1.2')
     .from('.map__label', { opacity: 0, duration: .8 }, '-=1')
-    .from('.pin', { y: -26, opacity: 0, duration: .8, stagger: .12, ease: 'back.out(2)' }, '-=.7');
+    .from('.pin', { y: -26, opacity: 0, duration: .8, stagger: .12, ease: 'expo.out' }, '-=.7');
   if (!desk) gsap.from('.tour__track > li', { opacity: 0, x: 40, duration: 1, stagger: .1, ease: 'power3.out', scrollTrigger: once('.tour__viewport') });
 
   /* Footer: logo rises, the branch names settle */

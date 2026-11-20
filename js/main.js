@@ -227,3 +227,14 @@
   const seen = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-seen'); seen.unobserve(e.target); } }), { threshold: .15 });
   steps.forEach(s => seen.observe(s));
 })();
+
+/* Phones: the floating Order now steps aside while another Order now (the hero buttons, the Order section) or the footer is on screen */
+(() => {
+  const fab = document.querySelector('.fab'); if (!fab || !('IntersectionObserver' in window)) return;
+  const on = new Set();
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => e.isIntersecting ? on.add(e.target) : on.delete(e.target));
+    fab.classList.toggle('is-away', on.size > 0);
+  });
+  document.querySelectorAll('.hero__cta, .order__cols, .foot').forEach(el => io.observe(el));
+})();
