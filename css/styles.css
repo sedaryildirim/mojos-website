@@ -483,3 +483,8 @@ html:not(.motion) .spot__step { opacity: 1; }
 .fab { transition: opacity .3s var(--ease), transform .3s var(--ease), visibility .3s; }
 .fab.is-away { opacity: 0; visibility: hidden; transform: translate(-50%, 16px); }
 html:not(.motion) .fab { transition: none; }
+
+/* KPG Delivery buttons (owner, 20 Nov 2026): the same red fill as GrabFood, told apart by an inner hairline ring */
+.btn--kpg { outline: 1px solid color-mix(in srgb, var(--on-red) 70%, transparent); outline-offset: -5px; }
+.btn--kpg:hover { outline-color: color-mix(in srgb, var(--black) 45%, transparent); }
+.btn--kpg:focus-visible { outline: 2px solid var(--white); outline-offset: 4px; }
