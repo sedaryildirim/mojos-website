@@ -82,7 +82,8 @@
     follow();
   }
   vp.addEventListener('scroll', () => { bar.style.setProperty('--p', vp.scrollLeft / Math.max(1, vp.scrollWidth - vp.clientWidth)); follow(); }, { passive: true });
-  addEventListener('scroll', move, { passive: true });
+  let moveQ = false;   // one move per frame: it writes the transform, then follow() reads the cards
+  addEventListener('scroll', () => { if (!moveQ) { moveQ = true; requestAnimationFrame(() => { moveQ = false; move(); }); } }, { passive: true });
   addEventListener('resize', layout);
   addEventListener('load', layout);
   layout();
