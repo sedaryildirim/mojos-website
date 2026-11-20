@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-palette="diner">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mojo's | Rock 'n' roll burgers on Koh Phangan and Koh Samui</title>
+<meta name="description" content="Mojo's: rock 'n' roll burgers. 4 branches on 2 islands: Chaloklum and Thong Sala on Koh Phangan, Lamai and Nathon on Koh Samui. Order on GrabFood or KPG Delivery. Sunday roast at Lamai.">
+<link rel="stylesheet" href="css/styles.css">
+<script>/* dark mode = Neon diner, light mode = Cream: follows the phone or computer setting unless the visitor picks one */
+document.documentElement.classList.add("js");
+try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !== "cream") pal = matchMedia("(prefers-color-scheme: light)").matches ? "cream" : "diner"; document.documentElement.dataset.palette = pal; } catch (e) {}</script>
+</head>
+<body>
+<a class="skip" href="#menu">Skip to the menu</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<header class="top">
+  <a class="top__logo" href="#top" aria-label="Mojo's, back to the top"><img src="img/mojos-logo-white-1960.png" alt="Mojo's" width="1960" height="911"></a>
+  <nav class="top__nav" aria-label="Sections">
+    <a href="#order">Order</a>
+    <a href="#menu">Menu</a>
+    <a href="#roast">Sunday roast</a>
+    <a href="#branches">Branches</a>
+  </nav>
+  <a class="btn btn--red top__order" href="#order" data-open-order>Order now</a>
+  <button type="button" class="mode"><span class="mode__icon" aria-hidden="true"></span><span class="mode__label">Auto</span></button>
+  <button type="button" class="burger" aria-haspopup="dialog" aria-controls="phone-menu" aria-label="Open the menu"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+<!-- 1. LANDING: signature -->
+<section class="hero hero--sig" aria-labelledby="hero-title">
+  <div class="hero__photo" aria-hidden="true"><img src="img/storefront-front.jpg" alt="" width="2200" height="1650" fetchpriority="high"></div>
+  <div class="sig">
+    <div class="sig__logo"><img class="hero__logo" src="img/mojos-logo-white-1960.png" alt="Mojo's" width="1960" height="911"></div>
+    <span class="sig__dash" aria-hidden="true"></span>
+    <p class="sig__tag">Rock 'n' roll burgers</p>
+    <p class="hero__count">4 branches &middot; 2 islands</p>
+    <h1 id="hero-title" class="sr-only">Mojo's: rock 'n' roll burgers on Koh Phangan and Koh Samui</h1>
+    <div class="hero__cta">
+        <a class="btn btn--red" href="#order" data-open-order>Order now</a>
+        <a class="btn btn--line" href="#menu">See the menu</a>
+      </div>
+  </div>
+</section>
+
+<!-- 2. 4 BRANCHES / 2 ISLANDS -->
+<section class="count" aria-labelledby="count-title">
+  <h2 id="count-title" class="sr-only">4 branches on 2 islands</h2>
+  <div class="count__fig reveal">
+    <span class="count__n">4</span>
+    <span class="count__w">Branches</span>
+  </div>
+  <div class="count__rule" aria-hidden="true"></div>
+  <div class="count__fig reveal">
+    <span class="count__n">2</span>
+    <span class="count__w">Islands</span>
+  </div>
+  <dl class="count__isles reveal">
+    <div><dt>Koh Phangan</dt><dd>Chaloklum, Thong Sala</dd></div>
+    <div><dt>Koh Samui</dt><dd>Lamai, Nathon</dd></div>
+  </dl>
+</section>
+
+<!-- 3. ORDER -->
+<section class="order" id="order" aria-labelledby="order-title">
+  <header class="sec-head reveal">
+    <p class="kicker">Delivery</p>
+    <h2 id="order-title" class="sec-h">Order in</h2>
+    <p class="sec-lede">Same burgers, delivered hot. Pick your island.</p>
+  </header>
+  <div class="order__cols">
+    <div class="order__col order__col--samui reveal">
+      <p class="order__isle">Koh Samui</p>
+      <p class="order__app">Order on <strong>GrabFood</strong></p>
+      <ul class="order__list">
+        <li><span>Lamai</span><a class="btn btn--red" href="https://app.grab.com/s/g5Jw4bQ9" target="_blank" rel="noopener">Order on GrabFood<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><span>Nathon</span><a class="btn btn--red" href="https://app.grab.com/s/3viSvutK" target="_blank" rel="noopener">Order on GrabFood<span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+    <div class="order__col reveal">
+      <p class="order__isle">Koh Phangan</p>
+      <p class="order__app">Order via <strong>KPG Delivery</strong></p>
+      <ul class="order__list">
+        <li><span>Chaloklum</span><a class="btn btn--line" href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener">Order on KPG<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><span>Thong Sala</span><a class="btn btn--line" href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener">Order on KPG<span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4. MENU -->
+<section class="menu" id="menu" aria-labelledby="menu-title">
+  <header class="sec-head reveal">
+    <p class="kicker">Menu</p>
+    <h2 id="menu-title" class="sec-h">The menu</h2>
+  </header>
+  <div class="menu__tabs" role="tablist" aria-label="Menu sections">
+    <button role="tab" id="tab-0" aria-controls="p-0" aria-selected="true" tabindex="0">Beef</button>
+    <button role="tab" id="tab-1" aria-controls="p-1" aria-selected="false" tabindex="-1">Chicken &amp; more</button>
+    <button role="tab" id="tab-2" aria-controls="p-2" aria-selected="false" tabindex="-1">Loaded fries</button>
+    <button role="tab" id="tab-3" aria-controls="p-3" aria-selected="false" tabindex="-1">Tacos</button>
+    <button role="tab" id="tab-4" aria-controls="p-4" aria-selected="false" tabindex="-1">Crispy &amp; sides</button>
+    <button role="tab" id="tab-5" aria-controls="p-5" aria-selected="false" tabindex="-1">Drinks</button>
+  </div>
+  <div class="menu__panels">
+    <div role="tabpanel" id="p-0" aria-labelledby="tab-0">
+      <h3 class="menu__ph">Beef</h3>
+      <ul class="dishes">
+      <li class="dish"><span class="dish__n">Big Boy</span><span class="dish__lead"></span><span class="dish__p">450</span><span class="dish__d">triple patty, american cheese, bacon, onion jam, pickles, lettuce, tomato, mustard, ketchup &amp; garlic mayo</span></li>
+      <li class="dish"><span class="dish__n">Austin<em class="fav">House favourite</em></span><span class="dish__lead"></span><span class="dish__p">360</span><span class="dish__d">single patty, pulled brisket, american cheese, bacon, onion rings, pickle, chipotle &amp; bbq sauce</span></li>
+      <li class="dish"><span class="dish__n">Mac Daddy</span><span class="dish__lead"></span><span class="dish__p">360</span><span class="dish__d">double patty, fried mac &amp; cheese, american cheese, pickles, onion, pickled onion, mustard &amp; bbq sauce</span></li>
+      <li class="dish"><span class="dish__n">Big Blue</span><span class="dish__lead"></span><span class="dish__p">350</span><span class="dish__d">double patty, bacon, blue cheese, grilled onion, lettuce, tomato &amp; roasted garlic mayo</span></li>
+      <li class="dish"><span class="dish__n">Bacon Cheese</span><span class="dish__lead"></span><span class="dish__p">340</span><span class="dish__d">double patty, american cheese, bacon, white onion, pickle, ketchup &amp; mustard</span></li>
+      <li class="dish"><span class="dish__n">Mojo<em class="fav">House favourite</em></span><span class="dish__lead"></span><span class="dish__p">320</span><span class="dish__d">double patty, sharp cheddar, grilled onion, lettuce, crispy shallots, pickle, tomato &amp; mojo’s sauce</span></li>
+      <li class="dish"><span class="dish__n">Gringo</span><span class="dish__lead"></span><span class="dish__p">320</span><span class="dish__d">double patty, american cheese, jalapeños, pickles, red onion &amp; chipotle mayo</span></li>
+      <li class="dish"><span class="dish__n">Junior</span><span class="dish__lead"></span><span class="dish__p">220</span><span class="dish__d">single patty, american cheese, pickles, onion &amp; mustard. made for small eaters</span></li>
+      </ul>
+      <div class="menu-notes">
+      <div><h3>+ Add fries &amp; a drink</h3><p>house fries +90 · sweet potato fries +130 · beer from 100 · soft drink 60</p></div>
+      <div><h3>Make it yours</h3><p>extra patty +100 · bacon or blue cheese +60 · jalapeño, american cheese or cheddar +40 · tomato, onion or lettuce +20</p></div>
+      <div><h3>Add a sauce +40</h3><p>mojo’s, chipotle, bbq, blue cheese, roasted garlic, salsa roja, nashville hot honey or smoky ketchup</p></div>
+      </div>
+    </div>
+    <div role="tabpanel" id="p-1" aria-labelledby="tab-1">
+      <h3 class="menu__ph">Chicken &amp; more</h3>
+      <ul class="dishes">
+      <li class="dish"><span class="dish__n">Bayou<b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">290</span><span class="dish__d">fried chicken breast, chilli dust, nashville hot honey, coleslaw, pickles &amp; red onion</span></li>
+      <li class="dish"><span class="dish__n">Southern Fried</span><span class="dish__lead"></span><span class="dish__p">290</span><span class="dish__d">fried chicken breast, american cheese, lettuce, pickle, pickled onion &amp; chipotle mayo</span></li>
+      <li class="dish"><span class="dish__n">Pulled Pork</span><span class="dish__lead"></span><span class="dish__p">290</span><span class="dish__d">pulled pork, coleslaw, pickled onion &amp; mojo’s sauce</span></li>
+      <li class="dish"><span class="dish__n">Veggie<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">200</span><span class="dish__d">grilled vegetables, pickled &amp; grilled onion, chipotle mayo</span></li>
+      </ul>
+      <div class="menu-notes">
+      <div><h3>+ Add fries &amp; a drink</h3><p>house fries +90 · sweet potato fries +130 · beer from 100 · soft drink 60</p></div>
+      <div><h3>Make it yours</h3><p>extra patty +100 · bacon or blue cheese +60 · jalapeño, american cheese or cheddar +40 · tomato, onion or lettuce +20</p></div>
+      <div><h3>Add a sauce +40</h3><p>mojo’s, chipotle, bbq, blue cheese, roasted garlic, salsa roja, nashville hot honey or smoky ketchup</p></div>
+      </div>
+    </div>
+    <div role="tabpanel" id="p-2" aria-labelledby="tab-2">
+      <h3 class="menu__ph">Loaded fries</h3>
+      <ul class="dishes">
+      <li class="dish"><span class="dish__n">Brisket Fries<em class="fav">House favourite</em></span><span class="dish__lead"></span><span class="dish__p">340</span><span class="dish__d">pulled brisket, chipotle sauce, bbq sauce &amp; fried shallots</span></li>
+      <li class="dish"><span class="dish__n">Pulled Pork Fries</span><span class="dish__lead"></span><span class="dish__p">280</span><span class="dish__d">pulled pork, fried shallots, bbq &amp; ranch sauce</span></li>
+      <li class="dish"><span class="dish__n">Chipotle Chicken Fries</span><span class="dish__lead"></span><span class="dish__p">260</span><span class="dish__d">buttermilk fried tenders, chipotle mayo &amp; fried shallots</span></li>
+      <li class="dish"><span class="dish__n">Nashville Fries<b class="veg" title="vegetarian">V</b><b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">140</span><span class="dish__d">chilli dust &amp; nashville hot honey</span></li>
+      <li class="dish"><span class="dish__n">Sweet Potato Fries<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">130</span><span class="dish__d"></span></li>
+      <li class="dish"><span class="dish__n">Fries<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">90</span><span class="dish__d"></span></li>
+      </ul>
+    </div>
+    <div role="tabpanel" id="p-3" aria-labelledby="tab-3">
+      <h3 class="menu__ph">Tacos</h3>
+      <ul class="dishes">
+      <li class="dish"><span class="dish__n">Brisket Taco</span><span class="dish__lead"></span><span class="dish__p">180</span><span class="dish__d">pulled brisket, fried cheese tortilla, salsa roja, red onion, jalapeños &amp; lime</span></li>
+      <li class="dish"><span class="dish__n">Pulled Pork Taco</span><span class="dish__lead"></span><span class="dish__p">150</span><span class="dish__d">pulled pork, fried cheese tortilla, salsa roja, red onion, jalapeños &amp; lime</span></li>
+      <li class="dish"><span class="dish__n">Chicken Taco</span><span class="dish__lead"></span><span class="dish__p">130</span><span class="dish__d">buttermilk fried tenderloin, fried cheese tortilla, salsa roja, red onion, jalapeños &amp; lime</span></li>
+      </ul>
+    </div>
+    <div role="tabpanel" id="p-4" aria-labelledby="tab-4">
+      <h3 class="menu__ph">Crispy &amp; sides</h3>
+      <ul class="dishes">
+      <li class="dish"><span class="dish__n">Nashville Hot Wings<b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">220</span><span class="dish__d">buttermilk fried wings, chilli dust, nashville hot honey, fried shallots &amp; ranch</span></li>
+      <li class="dish"><span class="dish__n">Chicken Tenders</span><span class="dish__lead"></span><span class="dish__p">200</span><span class="dish__d">buttermilk fried tenders, chipotle mayo &amp; fried shallots</span></li>
+      <li class="dish"><span class="dish__n">Dirty Tots</span><span class="dish__lead"></span><span class="dish__p">200</span><span class="dish__d">tater tots, grated parmesan, bacon bits &amp; garlic mayo</span></li>
+      <li class="dish"><span class="dish__n">Cauliflower Bombs<b class="veg" title="vegetarian">V</b><b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">160</span><span class="dish__d">buttermilk fried florets, nashville hot honey, chilli dust &amp; blue cheese ranch</span></li>
+      <li class="dish"><span class="dish__n">Onion Rings<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">150</span><span class="dish__d">buttermilk onion rings with chipotle mayo</span></li>
+      <li class="dish"><span class="dish__n">Mac n’ Cheese<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">150</span><span class="dish__d">macaroni, parmesan &amp; fried shallots</span></li>
+      <li class="dish"><span class="dish__n">Coleslaw<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">100</span><span class="dish__d">traditional, american style</span></li>
+      </ul>
+      <div class="menu-notes">
+      <div><h3>+ Made to share</h3><p>we recommend 2–3 sides for 2 people</p></div>
+      </div>
+    </div>
+    <div role="tabpanel" id="p-5" aria-labelledby="tab-5">
+      <h3 class="menu__ph">Drinks</h3>
+      <ul class="dishes">
+      <li class="dish"><span class="dish__n">Cocktails</span><span class="dish__lead"></span><span class="dish__p">250</span><span class="dish__d">mojito, cosmopolitan, margarita, whisky sour or amaretto sour</span></li>
+      <li class="dish"><span class="dish__n">Wine</span><span class="dish__lead"></span><span class="dish__p">190</span><span class="dish__d">house white or house red</span></li>
+      <li class="dish"><span class="dish__n">Beer</span><span class="dish__lead"></span><span class="dish__p">100</span><span class="dish__d">leo, chang or singha · san miguel light 120</span></li>
+      <li class="dish"><span class="dish__n">Soft drinks</span><span class="dish__lead"></span><span class="dish__p">60</span><span class="dish__d">coca cola, diet coke, coke zero, sprite, fanta, tonic, soda water, ginger ale or schweppes lime</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="menu__legend"><b class="hot">Hot</b> spicy &nbsp;&nbsp; <b class="veg">V</b> vegetarian &nbsp;&nbsp; Prices in baht, including VAT. Tell us about any allergies.</p>
+</section>
+
+<!-- 5. SUNDAY ROAST, LAMAI -->
+<section class="roast" id="roast" aria-labelledby="roast-title">
+  <div class="roast__frame">
+    <header class="roast__head reveal">
+      <p class="kicker">Lamai only &middot; Koh Samui</p>
+      <h2 id="roast-title" class="roast__h">Sunday roast</h2>
+      <p class="roast__when">Every Sunday at Mojo's Lamai, from 12:00 until it runs out. Just walk in.</p>
+    </header>
+    <div class="roast__cols">
+      <div class="reveal">
+        <h3 class="sub-h">Roasts</h3>
+        <ul class="dishes">
+          <li class="dish"><span class="dish__n">Beef</span><span class="dish__lead"></span><span class="dish__p">590</span><span class="dish__d">australian angus picanha</span></li>
+          <li class="dish"><span class="dish__n">Lamb</span><span class="dish__lead"></span><span class="dish__p">590</span><span class="dish__d">australian lamb</span></li>
+          <li class="dish"><span class="dish__n">Mixed <em class="fav">House favourite</em></span><span class="dish__lead"></span><span class="dish__p">590</span><span class="dish__d">slow-roasted chicken breast, australian lamb &amp; angus picanha</span></li>
+          <li class="dish"><span class="dish__n">Chicken</span><span class="dish__lead"></span><span class="dish__p">490</span><span class="dish__d">slow-roasted chicken breast</span></li>
+          <li class="dish"><span class="dish__n">Little Mojos</span><span class="dish__lead"></span><span class="dish__p">320</span><span class="dish__d">a half portion of any roast, for children or small eaters</span></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3 class="sub-h">Every roast comes with</h3>
+        <p class="roast__with">crispy rosemary potatoes, honey buttered carrots, cauliflower cheese, pork &amp; apple stuffing, buttered greens, yorkshire pudding &amp; gravy, plus mint or horseradish sauce</p>
+        <ul class="dishes dishes--small">
+          <li class="dish"><span class="dish__n">Extra sauce</span><span class="dish__lead"></span><span class="dish__p">+40</span><span class="dish__d">mint or horseradish</span></li>
+          <li class="dish"><span class="dish__n">House wine</span><span class="dish__lead"></span><span class="dish__p">190</span><span class="dish__d">white or red</span></li>
+          <li class="dish"><span class="dish__n">Beer</span><span class="dish__lead"></span><span class="dish__p">100</span><span class="dish__d">leo, chang or singha · san miguel light 120 · ask for our full drinks list</span></li>
+        </ul>
+        <a class="btn btn--line" href="https://maps.app.goo.gl/j266xn1qLNvqVzrd9" target="_blank" rel="noopener">Directions to Lamai<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. BRANCHES: side-scrolling run (adapted from version B's "double album") -->
+<section class="tour" id="branches" aria-labelledby="branches-title">
+  <div class="tour__pin">
+    <div class="tour__side">
+      <header class="tour__head">
+        <p class="kicker">Branches</p>
+        <h2 id="branches-title" class="sec-h">Find us</h2>
+        <p class="sec-lede">Four branches on two islands.</p>
+      </header>
+      <div class="map">
+        <svg viewBox="0 0 419 647" role="group" aria-label="Map of Koh Phangan and Koh Samui with the four Mojo's branches">
+          <g class="map__depth"><path d="M143.2 96.6l1.2 23.6 8 13.1 12.3 4.2 -0.4 26.1 17.2 26.2 69.6 20.2 26 16.6 18.1 20.2 14.7 1.6 9.6 -5.6 3.1 -37.3 6.1 -11.1 -5.7 -18.5 4.6 -39.6 -11.3 -38 -14 -16.4 0.9 -9 -5.7 -8.5 -13.8 -8.5 -21.1 -3.7 -13.6 -12.7 -22.5 1.7 -13.2 11.9 -8.5 -11 -12.3 -1.8 -32.2 18.6z"/><path d="M125.7 92.5l2.6 35.8 43 76.4 70.7 21.4 47.4 37.8 27.1 1.4 18.4 -13 11.8 -57.6 -1.5 -62.1 -12.1 -40.9 -25.1 -41.9 -53.2 -27.3 -66.2 0.3 -43.7 26.4z"/><path d="M78.9 361.2l3.9 11 18.4 13.2 7.2 25.7 0.5 38.8 -14 2.9 -7.1 14.9 18.5 33.3 1.5 38.7 -7.7 18.4 8 18.6 35.9 -2.5 8.8 11.8 10 3.7 31.5 -18.2 34.4 1.6 13 -9.4 11.9 -29.5 15.3 -4.8 12.1 -21 21.5 4.3 14.7 -12.4 0.8 -11 -21.8 -42.6 3.7 -19.9 22.1 -18.5 -0.6 -13.4 14.5 -12.9 4.4 -17.3 -20 -37.9 -20.4 -8.8 -11 3.4 -7.1 8.6 0 12.6 -9.2 18.1 -10.1 -4.9 -14.4 5.3 -14.9 -18.1 -23.1 5.7 -23.7 -22.5 -44.2 11.3 -45.4 3.2z"/><path d="M61.0 359.4l28.9 53.4 -2 23.3 -18.1 32.9 20.4 48.9 -5.7 56.1 15.1 18.6 35.6 1.6 28.5 13.5 34.7 -18.4 35.8 1 19.1 -12.5 13.5 -28 23.1 -20.3 22.6 -1.1 20.7 -19.9 1.9 -24.8 -19.9 -45.5 22.7 -21.5 20.5 -56.4 -28.5 -48.7 -40.4 -10.4 -33.5 37.3 -18.7 -13.1 -22.6 3.2 -26.8 -20.3 -93.4 14.4 -25.2 17.9z"/></g>
+          <path class="map__isle" d="M156.0 99.7l1.8 4.5 -1.7 10.2 2.9 1.4 1.7 2.8 1.2 -0.5 -0.8 1.6 1.7 0.4 -0.2 1.3 -1.7 -0.3 -0.5 1.8 2.7 1.6 2.8 -2.9 4.3 0 5.6 7 6.1 18.8 -0.6 1.4 -1.2 -0.5 -4.1 2.6 0.9 8.8 1.8 3.4 1.6 1.3 2 -0.7 1.5 1.9 1.1 4.6 -1.2 1.2 -0.3 -3.2 -0.9 0.4 0.7 3.8 3.4 -1.4 -2.6 2.2 1.8 -0 -0 1.8 3.1 4 1.9 -1 6.4 5.2 7.6 -1.8 5.9 1 4.3 2.7 15.2 3.1 -0.7 1.2 1.1 1 -0.4 1.7 0.8 -2 -1 -1 3.4 0.4 -0.6 1.5 -1.4 -0.4 -0.5 2 3.2 -2 5.4 3 20.1 5.1 6.9 7.9 19.6 10.3 4.9 6.7 -1 0.9 0.4 0.7 0.5 -1.4 1.9 3.1 2.9 0.2 3.2 3.1 1 4.3 7.2 1.1 1.9 -0.8 0.6 -2.6 -5.4 -1.3 -1.5 -3.4 -4.6 -2.6 -0.5 -3.8 1.3 -3.9 3.6 -0.2 2.8 -3 1.8 -0 0.5 1.3 3.1 -2.1 0.3 -1.4 -3.5 -3.2 -2.9 -5.7 1.5 -3.4 3.7 -1.3 -1 -1.8 1.4 -1.7 3.3 0.6 1.9 -1 -4 -2.3 1.9 -3.6 -1.6 -1.7 -5 -15.2 1.7 -2.9 1.8 0.5 3.2 -2.6 -0.8 -1.6 -3.8 -0.5 -0.6 -1.7 2.8 -8 -1.1 -4 2.7 -1 1.9 -4.4 0.1 -6.3 -1.9 -2.5 -0.3 -5.9 -3.5 -3.6 -2 -0.3 0.5 -2.3 -1.7 -0.8 2.3 -5.6 -1.5 -0.8 -0.3 -3 -2.6 -2.3 -1.2 -3.6 1.5 -3 -0.4 -3.4 -5.1 -2.3 -3.3 -6.6 -2.9 0.6 -1.3 3.7 -2.8 1 -6.1 -4.8 1.6 -4.7 -2.2 -1.9 0.5 -6 5.5 -2.8 2.3 0.1 0.1 -3 -8.4 -3.2 -1.9 -3.4 -3.2 -1.1 -5.1 0.1 -3.3 -1.6 -3 1.8 -6 -2.8 -1.4 2.2 -4.9 -0.6 -3.9 -12.7 -5.2 -1.9 -5.5 0.9 -3.1 2 -4.9 -0.9 -1 5.3 -2.4 1.5 -2 -1 0.3 3.5 -3 5.7 -1.9 -0.7 -0.5 1.2 0.7 -1 0.8 2 -0.9 1.6 -6.7 2.7 -2.6 -1.3 -1.1 -3.5 -1.3 1.6 -6.5 -3.7 2.8 -4.6 -3.4 -1.1 -3 -8.1 -3.3 -0.8 -1.6 2.9 0.4 3.4 -9.2 -1.4 -0.5 2.3 -2.7 0.4 -2 5.7 -2.6 2.2 -3.7 0.8 -3.5 -1.4 2.7 6.3 -3.8 3.8 -4.6 -1.6 -1.2 3.7 1.1 1.6 -1.2 1.6 0.9 5.1 -3.3 4.1 -3.3 1.5 1 2.1z"/><path class="map__isle" d="M92.0 362.5l1.9 1 3.7 -0.6 10.8 10.1 4.1 5.6 9.5 30.6 -1.1 14.4 1.1 0.3 -3.2 9.4 3.5 12.3 -1 9.3 -2.5 5.3 -6.6 6.2 -4.6 0.9 -3.3 -1 -0.4 -2.7 2 -0.9 -3.1 0.7 -1.9 3.4 0.7 3.1 3 -1.2 5.2 5.9 2 8.1 -0.9 3.1 3.1 -0.1 1.4 2.2 -1.8 2 1.8 -1.6 0.6 0.9 -1.6 1.1 1.7 -0.9 1.1 1.5 4.5 23.3 1.1 11.9 -1.9 12 1.3 7.8 3 3.4 -3.2 4.9 -3.1 -3 -4.7 -0 -1 6 1.5 8.1 8.6 -0.9 7.9 -5.5 4.7 0.5 -0.1 3.5 1.1 0.2 -0.2 -2.9 2.9 1 1.8 -2.4 1.9 -0 9.9 4 2.1 2.6 -0.1 1.9 2.8 2.4 0.2 3.5 4 3.3 15 -11.3 13.4 -6.6 17.4 -2.7 4.3 3.5 4 -0.1 3.6 2.8 4.8 -1.6 2.4 -3.3 3.8 -1.1 -1.3 -0.6 0.3 -2.8 5.9 -9.6 4.1 -13 3.8 -4.7 0.6 -3.7 2.2 -1.2 5.2 0.7 5.2 -3.3 3.4 1.5 5.8 -12.4 6.7 -9.2 6.3 -3.7 3.3 -0.8 0.8 2.1 -0.4 -2 7.1 -0.3 2.8 0.3 7.3 6.3 1.5 -3.2 3.9 -2.2 -1.3 -2.5 -4 -1.2 0.9 -5.4 -3.6 0.5 -2.4 -1.6 1.4 -7.1 -0.8 -4 -6.3 -4.6 -1.7 -11 -2.2 -2.7 -2.6 -0.6 -1.3 -3.8 1.2 -7.5 1.4 -1.9 -1.9 -0.9 0.5 -4.2 6.9 -17.8 9.6 -6.8 0.9 -4.5 2 -2.6 8.2 -2.1 -2.7 -5 0 -5.9 5.4 -8.7 4.8 -2.7 0.8 -2.6 5.6 -1.2 -0.5 -6 3.5 -7.3 -2.8 -0.4 -3.5 -3.5 -4 0.9 -3.2 -3 0.8 -1.8 -0.8 -4.7 1.8 -2.4 -2.4 -2.6 1.3 -6 -1.2 -1.1 -7.1 2.2 -2.9 -4.4 -3.8 0.2 -0.8 -1.5 0.9 -3.1 -3.5 1.1 -2.5 4.1 4 2.1 1 5.9 -4 10.8 -6.2 -1.3 5.7 2.3 -1.1 0.6 -4.6 -2.4 4.8 3.3 -4.4 6.5 -0.9 -2 1.2 -0.8 -3 -1.2 2.6 4.5 0.2 5.8 -6.9 6.6 -5.4 2.2 -11.4 -3.9 -3.1 -6.6 -1 4.2 -7.8 2.4 -4.4 0 -8.8 -3.8 -7.7 -5 -1 -3.7 2.4 -2 -3.6 -5.3 -3.4 4 -6.4 2.7 -9.6 0.2 -6 -1.9 -14.6 -12.6 -4.9 -7.1 0.1 -1.7 -19.9 5 -6.9 3.6 -14 2.5 -23.4 1 -2 0.6 -0.7 2.1 -11.6 2.4 -6.4 -3.2 -3.3 4.4 -0.6 3.4 -1.7 0.6 -0.8 -1z"/>
+          <path class="map__ferry" d="M196.0 177.5Q185.1 293.0 122.2 408.5"/>
+          <text class="map__note-t" x="187.1" y="297.0">Ferry</text>
+          <text class="map__label" x="241.6" y="137.1">Koh Phangan</text>
+          <text class="map__label" x="199.9" y="454.1">Koh Samui</text>
+          <text class="map__sea" x="389.0" y="302.6" transform="rotate(-90 389.0 302.6)">Gulf of Thailand</text>
+          <g class="map__deco"><path d="M22 621h60M22 617v8M82 617v8"/><text x="52" y="612">5 km</text>
+            <path d="M385 44l7 -22 7 22 -7 -6z"/><text x="392" y="60">N</text></g>
+          <g class="pin" data-branch="chaloklum" tabindex="0" role="button" aria-label="Show Chaloklum"><circle class="pin__hit" cx="217.8" cy="75.3" r="18"/><circle class="pin__ring" cx="217.8" cy="75.3" r="11"/><circle cx="217.8" cy="75.3" r="3.5"/><text x="217.8" y="51.3" text-anchor="middle">Chaloklum</text></g><g class="pin" data-branch="thongsala" tabindex="0" role="button" aria-label="Show Thong Sala"><circle class="pin__hit" cx="196.0" cy="177.5" r="18"/><circle class="pin__ring" cx="196.0" cy="177.5" r="11"/><circle cx="196.0" cy="177.5" r="3.5"/><text x="182.0" y="182.5" text-anchor="end">Thong Sala</text></g><g class="pin" data-branch="nathon" tabindex="0" role="button" aria-label="Show Nathon"><circle class="pin__hit" cx="122.2" cy="408.5" r="18"/><circle class="pin__ring" cx="122.2" cy="408.5" r="11"/><circle cx="122.2" cy="408.5" r="3.5"/><text x="108.2" y="413.5" text-anchor="end">Nathon</text></g><g class="pin" data-branch="lamai" tabindex="0" role="button" aria-label="Show Lamai"><circle class="pin__hit" cx="264.9" cy="503.3" r="18"/><circle class="pin__ring" cx="264.9" cy="503.3" r="11"/><circle cx="264.9" cy="503.3" r="3.5"/><text x="278.9" y="508.3" text-anchor="start">Lamai</text></g>
+        </svg>
+        <p class="map__credit">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors<span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+    </div>
+
+    <div class="tour__viewport" role="region" tabindex="0" aria-label="Branches, scroll sideways">
+      <ul class="tour__track" role="list">
+        <li class="isle-card" aria-hidden="true"><span class="isle-card__isle">Koh Phangan</span><span class="isle-card__app">KPG Delivery</span></li>
+        <li class="branch" id="b-chaloklum" data-branch="chaloklum">
+          <p class="branch__isle">Koh Phangan</p>
+          <h3 class="branch__n">Chaloklum</h3>
+          <p class="branch__hrs">Open daily<br>12:00 to 22:00</p>
+          <div class="branch__foot">
+            <a class="btn btn--line" href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener">Order on KPG Delivery<span class="sr-only"> (opens in a new tab)</span></a>
+            <a class="link" href="https://maps.app.goo.gl/wGY6K9z6U5o7jAU28" target="_blank" rel="noopener">Google Maps<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+        </li>
+        <li class="branch" id="b-thongsala" data-branch="thongsala">
+          <p class="branch__isle">Koh Phangan</p>
+          <h3 class="branch__n">Thong Sala</h3>
+          <p class="branch__hrs">Open daily<br>12:00 to 22:00</p>
+          <div class="branch__foot">
+            <a class="btn btn--line" href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener">Order on KPG Delivery<span class="sr-only"> (opens in a new tab)</span></a>
+            <a class="link" href="https://maps.app.goo.gl/n9raTGmfM69uTBPA9" target="_blank" rel="noopener">Google Maps<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+        </li>
+        <li class="isle-card" aria-hidden="true"><span class="isle-card__isle">Koh Samui</span><span class="isle-card__app">GrabFood</span></li>
+        <li class="branch" id="b-lamai" data-branch="lamai">
+          <p class="branch__isle">Koh Samui</p>
+          <h3 class="branch__n">Lamai</h3>
+          <p class="branch__hrs">Open daily<br>15:00 to 22:30<br>Sundays from 12:00 (Sunday roast)</p>
+          <p class="branch__roast">Sunday roast every Sunday from 12:00 until it runs out. Walk-in.</p>
+          <div class="branch__foot">
+            <a class="btn btn--red" href="https://app.grab.com/s/g5Jw4bQ9" target="_blank" rel="noopener">Order on GrabFood<span class="sr-only"> (opens in a new tab)</span></a>
+            <a class="link" href="https://maps.app.goo.gl/j266xn1qLNvqVzrd9" target="_blank" rel="noopener">Google Maps<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+        </li>
+        <li class="branch" id="b-nathon" data-branch="nathon">
+          <p class="branch__isle">Koh Samui</p>
+          <h3 class="branch__n">Nathon</h3>
+          <p class="branch__hrs">Open daily<br>12:00 to 21:00</p>
+          <div class="branch__foot">
+            <a class="btn btn--red" href="https://app.grab.com/s/3viSvutK" target="_blank" rel="noopener">Order on GrabFood<span class="sr-only"> (opens in a new tab)</span></a>
+            <a class="link" href="https://maps.app.goo.gl/tS8P7JckbCEsXVNx6" target="_blank" rel="noopener">Google Maps<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tour__progress" aria-hidden="true">
+      <span class="tour__bar"><i></i></span>
+      <span class="tour__lbl">Koh Phangan</span><span class="tour__lbl">Koh Samui</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__logo"><img src="img/mojos-logo-white-1960.png" alt="Mojo's" width="1960" height="911" loading="lazy"></div>
+  <p class="foot__places">Chaloklum &middot; Thong Sala &middot; Lamai &middot; Nathon</p>
+  <div class="foot__cols">
+    <div>
+      <h2 class="foot__h">Order</h2>
+      <ul>
+        <li><a href="https://app.grab.com/s/g5Jw4bQ9" target="_blank" rel="noopener">Lamai, GrabFood<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://app.grab.com/s/3viSvutK" target="_blank" rel="noopener">Nathon, GrabFood<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener">Chaloklum, KPG Delivery<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener">Thong Sala, KPG Delivery<span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="foot__h">Open daily</h2>
+      <ul class="foot__hrs">
+        <li>Chaloklum 12:00 to 22:00</li>
+        <li>Thong Sala 12:00 to 22:00</li>
+        <li>Lamai 15:00 to 22:30 &middot; Sundays from 12:00 (Sunday roast)</li>
+        <li>Nathon 12:00 to 21:00</li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="foot__h">Follow</h2>
+      <ul>
+        <li><a href="https://www.instagram.com/mojos.th/" target="_blank" rel="noopener">Instagram @mojos.th<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.facebook.com/mojos.th" target="_blank" rel="noopener">Facebook @mojos.th<span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors<span class="sr-only"> (opens in a new tab)</span></a></p>
+  <p class="fine">Mock-up, version C2. Not live.</p>
+</footer>
+
+<dialog class="pmenu" id="phone-menu" aria-label="Menu">
+  <div class="pmenu__top">
+    <img class="pmenu__logo" src="img/mojos-logo-white-1960.png" alt="" width="1960" height="911">
+    <form method="dialog"><button class="pmenu__x" aria-label="Close the menu"><span></span><span></span></button></form>
+  </div>
+  <nav class="pmenu__nav" aria-label="Sections">
+    <a href="#order"><small>01</small><span>Order</span></a>
+    <a href="#menu"><small>02</small><span>Menu</span></a>
+    <a href="#roast"><small>03</small><span>Sunday roast</span></a>
+    <a href="#branches"><small>04</small><span>Branches</span></a>
+  </nav>
+  <p class="pmenu__count">4 branches &middot; 2 islands</p>
+  <a class="btn btn--red pmenu__order" href="#order">Order now</a>
+</dialog>
+
+<dialog class="chooser" id="chooser" aria-labelledby="chooser-title">
+  <form method="dialog" class="chooser__x"><button aria-label="Close">&times;</button></form>
+  <h2 id="chooser-title" class="chooser__h">Which Mojo's?</h2>
+  <div class="chooser__isle chooser__isle--samui">
+    <p>Koh Samui &middot; <b>GrabFood</b></p>
+    <a class="chooser__b" href="https://app.grab.com/s/g5Jw4bQ9" target="_blank" rel="noopener"><span>Lamai</span><small>Daily 15:00 to 22:30<br>Sundays from 12:00</small><span class="sr-only"> (opens in a new tab)</span></a>
+    <a class="chooser__b" href="https://app.grab.com/s/3viSvutK" target="_blank" rel="noopener"><span>Nathon</span><small>12:00 to 21:00</small><span class="sr-only"> (opens in a new tab)</span></a>
+  </div>
+  <div class="chooser__isle">
+    <p>Koh Phangan &middot; <b>KPG Delivery</b></p>
+    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener"><span>Chaloklum</span><small>12:00 to 22:00</small><span class="sr-only"> (opens in a new tab)</span></a>
+    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener"><span>Thong Sala</span><small>12:00 to 22:00</small><span class="sr-only"> (opens in a new tab)</span></a>
+  </div>
+</dialog>
+
+<a class="fab" href="#order" data-open-order>Order now</a>
+
+<!-- Motion libraries, self-hosted. If they fail to load, the page stays fully visible and static. -->
+<script src="js/vendor/gsap.min.js" defer></script>
+<script src="js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/vendor/lenis.min.js" defer></script>
+<script src="js/main.js"></script>
+<script src="js/motion.js" defer></script>
+</body>
+</html>
