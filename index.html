@@ -25,7 +25,7 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
   </nav>
   <a class="btn btn--red top__order" href="#order" data-open-order>Order now</a>
   <button type="button" class="mode"><span class="mode__icon" aria-hidden="true"></span><span class="mode__label">Auto</span></button>
-  <button type="button" class="burger" aria-haspopup="dialog" aria-controls="phone-menu" aria-label="Open the menu"><span></span><span></span></button>
+  <button type="button" class="burger" aria-haspopup="dialog" aria-controls="phone-menu" aria-label="Jump to a section"><span></span><span></span></button>
 </header>
 
 <main id="top">
@@ -84,8 +84,8 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
       <p class="order__isle">Koh Phangan</p>
       <p class="order__app">Order via <strong>KPG Delivery</strong></p>
       <ul class="order__list">
-        <li><span>Chaloklum</span><a class="btn btn--line" href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener">Order on KPG<span class="sr-only"> (opens in a new tab)</span></a></li>
-        <li><span>Thong Sala</span><a class="btn btn--line" href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener">Order on KPG<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><span>Chaloklum</span><a class="btn btn--line" href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener">Order on KPG<span class="sr-only"> Delivery (opens in a new tab)</span></a></li>
+        <li><span>Thong Sala</span><a class="btn btn--line" href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener">Order on KPG<span class="sr-only"> Delivery (opens in a new tab)</span></a></li>
       </ul>
     </div>
   </div>
@@ -130,7 +130,7 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
       <li class="dish"><span class="dish__n">Bayou<b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">290</span><span class="dish__d">fried chicken breast, chilli dust, nashville hot honey, coleslaw, pickles &amp; red onion</span></li>
       <li class="dish"><span class="dish__n">Southern Fried</span><span class="dish__lead"></span><span class="dish__p">290</span><span class="dish__d">fried chicken breast, american cheese, lettuce, pickle, pickled onion &amp; chipotle mayo</span></li>
       <li class="dish"><span class="dish__n">Pulled Pork</span><span class="dish__lead"></span><span class="dish__p">290</span><span class="dish__d">pulled pork, coleslaw, pickled onion &amp; mojo’s sauce</span></li>
-      <li class="dish"><span class="dish__n">Veggie<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">200</span><span class="dish__d">grilled vegetables, pickled &amp; grilled onion, chipotle mayo</span></li>
+      <li class="dish"><span class="dish__n">Veggie<b class="veg"><span aria-hidden="true">V</span><span class="sr-only">vegetarian</span></b></span><span class="dish__lead"></span><span class="dish__p">200</span><span class="dish__d">grilled vegetables, pickled &amp; grilled onion, chipotle mayo</span></li>
       </ul>
       <div class="menu-notes">
       <div><h3>+ Add fries &amp; a drink</h3><p>house fries +90 · sweet potato fries +130 · beer from 100 · soft drink 60</p></div>
@@ -144,9 +144,9 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
       <li class="dish"><span class="dish__n">Brisket Fries<em class="fav">House favourite</em></span><span class="dish__lead"></span><span class="dish__p">340</span><span class="dish__d">pulled brisket, chipotle sauce, bbq sauce &amp; fried shallots</span></li>
       <li class="dish"><span class="dish__n">Pulled Pork Fries</span><span class="dish__lead"></span><span class="dish__p">280</span><span class="dish__d">pulled pork, fried shallots, bbq &amp; ranch sauce</span></li>
       <li class="dish"><span class="dish__n">Chipotle Chicken Fries</span><span class="dish__lead"></span><span class="dish__p">260</span><span class="dish__d">buttermilk fried tenders, chipotle mayo &amp; fried shallots</span></li>
-      <li class="dish"><span class="dish__n">Nashville Fries<b class="veg" title="vegetarian">V</b><b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">140</span><span class="dish__d">chilli dust &amp; nashville hot honey</span></li>
-      <li class="dish"><span class="dish__n">Sweet Potato Fries<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">130</span><span class="dish__d"></span></li>
-      <li class="dish"><span class="dish__n">Fries<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">90</span><span class="dish__d"></span></li>
+      <li class="dish"><span class="dish__n">Nashville Fries<b class="veg"><span aria-hidden="true">V</span><span class="sr-only">vegetarian</span></b><b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">140</span><span class="dish__d">chilli dust &amp; nashville hot honey</span></li>
+      <li class="dish"><span class="dish__n">Sweet Potato Fries<b class="veg"><span aria-hidden="true">V</span><span class="sr-only">vegetarian</span></b></span><span class="dish__lead"></span><span class="dish__p">130</span><span class="dish__d"></span></li>
+      <li class="dish"><span class="dish__n">Fries<b class="veg"><span aria-hidden="true">V</span><span class="sr-only">vegetarian</span></b></span><span class="dish__lead"></span><span class="dish__p">90</span><span class="dish__d"></span></li>
       </ul>
     </div>
     <div role="tabpanel" id="p-3" aria-labelledby="tab-3">
@@ -163,10 +163,10 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
       <li class="dish"><span class="dish__n">Nashville Hot Wings<b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">220</span><span class="dish__d">buttermilk fried wings, chilli dust, nashville hot honey, fried shallots &amp; ranch</span></li>
       <li class="dish"><span class="dish__n">Chicken Tenders</span><span class="dish__lead"></span><span class="dish__p">200</span><span class="dish__d">buttermilk fried tenders, chipotle mayo &amp; fried shallots</span></li>
       <li class="dish"><span class="dish__n">Dirty Tots</span><span class="dish__lead"></span><span class="dish__p">200</span><span class="dish__d">tater tots, grated parmesan, bacon bits &amp; garlic mayo</span></li>
-      <li class="dish"><span class="dish__n">Cauliflower Bombs<b class="veg" title="vegetarian">V</b><b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">160</span><span class="dish__d">buttermilk fried florets, nashville hot honey, chilli dust &amp; blue cheese ranch</span></li>
-      <li class="dish"><span class="dish__n">Onion Rings<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">150</span><span class="dish__d">buttermilk onion rings with chipotle mayo</span></li>
-      <li class="dish"><span class="dish__n">Mac n’ Cheese<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">150</span><span class="dish__d">macaroni, parmesan &amp; fried shallots</span></li>
-      <li class="dish"><span class="dish__n">Coleslaw<b class="veg" title="vegetarian">V</b></span><span class="dish__lead"></span><span class="dish__p">100</span><span class="dish__d">traditional, american style</span></li>
+      <li class="dish"><span class="dish__n">Cauliflower Bombs<b class="veg"><span aria-hidden="true">V</span><span class="sr-only">vegetarian</span></b><b class="hot">Hot</b></span><span class="dish__lead"></span><span class="dish__p">160</span><span class="dish__d">buttermilk fried florets, nashville hot honey, chilli dust &amp; blue cheese ranch</span></li>
+      <li class="dish"><span class="dish__n">Onion Rings<b class="veg"><span aria-hidden="true">V</span><span class="sr-only">vegetarian</span></b></span><span class="dish__lead"></span><span class="dish__p">150</span><span class="dish__d">buttermilk onion rings with chipotle mayo</span></li>
+      <li class="dish"><span class="dish__n">Mac n’ Cheese<b class="veg"><span aria-hidden="true">V</span><span class="sr-only">vegetarian</span></b></span><span class="dish__lead"></span><span class="dish__p">150</span><span class="dish__d">macaroni, parmesan &amp; fried shallots</span></li>
+      <li class="dish"><span class="dish__n">Coleslaw<b class="veg"><span aria-hidden="true">V</span><span class="sr-only">vegetarian</span></b></span><span class="dish__lead"></span><span class="dish__p">100</span><span class="dish__d">traditional, american style</span></li>
       </ul>
       <div class="menu-notes">
       <div><h3>+ Made to share</h3><p>we recommend 2–3 sides for 2 people</p></div>
@@ -295,7 +295,7 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
           <text class="map__sea" x="389.0" y="302.6" transform="rotate(-90 389.0 302.6)">Gulf of Thailand</text>
           <g class="map__deco"><path d="M22 621h60M22 617v8M82 617v8"/><text x="52" y="612">5 km</text>
             <path d="M385 44l7 -22 7 22 -7 -6z"/><text x="392" y="60">N</text></g>
-          <g class="pin" data-branch="chaloklum" tabindex="0" role="button" aria-label="Show Chaloklum"><circle class="pin__hit" cx="217.8" cy="75.3" r="31"/><circle class="pin__ring" cx="217.8" cy="75.3" r="11"/><circle cx="217.8" cy="75.3" r="3.5"/><text x="217.8" y="51.3" text-anchor="middle">Chaloklum</text></g><g class="pin" data-branch="thongsala" tabindex="0" role="button" aria-label="Show Thong Sala"><circle class="pin__hit" cx="196.0" cy="177.5" r="31"/><circle class="pin__ring" cx="196.0" cy="177.5" r="11"/><circle cx="196.0" cy="177.5" r="3.5"/><text x="182.0" y="182.5" text-anchor="end">Thong Sala</text></g><g class="pin" data-branch="nathon" tabindex="0" role="button" aria-label="Show Nathon"><circle class="pin__hit" cx="122.2" cy="408.5" r="31"/><circle class="pin__ring" cx="122.2" cy="408.5" r="11"/><circle cx="122.2" cy="408.5" r="3.5"/><text x="108.2" y="413.5" text-anchor="end">Nathon</text></g><g class="pin" data-branch="lamai" tabindex="0" role="button" aria-label="Show Lamai"><circle class="pin__hit" cx="264.9" cy="503.3" r="31"/><circle class="pin__ring" cx="264.9" cy="503.3" r="11"/><circle cx="264.9" cy="503.3" r="3.5"/><text x="278.9" y="508.3" text-anchor="start">Lamai</text></g>
+          <g class="pin" data-branch="chaloklum" tabindex="0" role="button" aria-label="Show the Chaloklum branch"><circle class="pin__hit" cx="217.8" cy="75.3" r="31"/><circle class="pin__ring" cx="217.8" cy="75.3" r="11"/><circle cx="217.8" cy="75.3" r="3.5"/><text x="217.8" y="51.3" text-anchor="middle">Chaloklum</text></g><g class="pin" data-branch="thongsala" tabindex="0" role="button" aria-label="Show the Thong Sala branch"><circle class="pin__hit" cx="196.0" cy="177.5" r="31"/><circle class="pin__ring" cx="196.0" cy="177.5" r="11"/><circle cx="196.0" cy="177.5" r="3.5"/><text x="182.0" y="182.5" text-anchor="end">Thong Sala</text></g><g class="pin" data-branch="nathon" tabindex="0" role="button" aria-label="Show the Nathon branch"><circle class="pin__hit" cx="122.2" cy="408.5" r="31"/><circle class="pin__ring" cx="122.2" cy="408.5" r="11"/><circle cx="122.2" cy="408.5" r="3.5"/><text x="108.2" y="413.5" text-anchor="end">Nathon</text></g><g class="pin" data-branch="lamai" tabindex="0" role="button" aria-label="Show the Lamai branch"><circle class="pin__hit" cx="264.9" cy="503.3" r="31"/><circle class="pin__ring" cx="264.9" cy="503.3" r="11"/><circle cx="264.9" cy="503.3" r="3.5"/><text x="278.9" y="508.3" text-anchor="start">Lamai</text></g>
         </svg>
         <p class="map__credit">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors<span class="sr-only"> (opens in a new tab)</span></a></p>
       </div>
@@ -389,10 +389,10 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
   <p class="fine">Mock-up, version C2. Not live.</p>
 </footer>
 
-<dialog class="pmenu" id="phone-menu" aria-label="Menu">
+<dialog class="pmenu" id="phone-menu" aria-label="Jump to a section">
   <div class="pmenu__top">
     <img class="pmenu__logo" src="img/mojos-logo-white-1960.png" alt="" width="1960" height="911">
-    <form method="dialog"><button class="pmenu__x" aria-label="Close the menu"><span></span><span></span></button></form>
+    <form method="dialog"><button class="pmenu__x" aria-label="Close the section links"><span></span><span></span></button></form>
   </div>
   <nav class="pmenu__nav" aria-label="Sections">
     <a href="#order"><small>01</small><span>Order</span></a>
@@ -407,15 +407,16 @@ try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !
 <dialog class="chooser" id="chooser" aria-labelledby="chooser-title">
   <form method="dialog" class="chooser__x"><button aria-label="Close">&times;</button></form>
   <h2 id="chooser-title" class="chooser__h">Which Mojo's?</h2>
+  <p class="chooser__lede">Tap a branch to order on its app.</p>
   <div class="chooser__isle chooser__isle--samui">
     <p>Koh Samui &middot; <b>GrabFood</b></p>
-    <a class="chooser__b" href="https://app.grab.com/s/g5Jw4bQ9" target="_blank" rel="noopener"><span>Lamai</span><small>Daily 15:00 to 22:30<br>Sundays from 12:00</small><span class="sr-only"> (opens in a new tab)</span></a>
-    <a class="chooser__b" href="https://app.grab.com/s/3viSvutK" target="_blank" rel="noopener"><span>Nathon</span><small>12:00 to 21:00</small><span class="sr-only"> (opens in a new tab)</span></a>
+    <a class="chooser__b" href="https://app.grab.com/s/g5Jw4bQ9" target="_blank" rel="noopener"><span>Lamai</span><small>Daily 15:00 to 22:30<br>Sundays from 12:00</small><span class="sr-only"> (opens GrabFood in a new tab)</span></a>
+    <a class="chooser__b" href="https://app.grab.com/s/3viSvutK" target="_blank" rel="noopener"><span>Nathon</span><small>12:00 to 21:00</small><span class="sr-only"> (opens GrabFood in a new tab)</span></a>
   </div>
   <div class="chooser__isle">
     <p>Koh Phangan &middot; <b>KPG Delivery</b></p>
-    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener"><span>Chaloklum</span><small>12:00 to 22:00</small><span class="sr-only"> (opens in a new tab)</span></a>
-    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener"><span>Thong Sala</span><small>12:00 to 22:00</small><span class="sr-only"> (opens in a new tab)</span></a>
+    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-chaloklum" target="_blank" rel="noopener"><span>Chaloklum</span><small>12:00 to 22:00</small><span class="sr-only"> (opens KPG Delivery in a new tab)</span></a>
+    <a class="chooser__b" href="https://delivery-kpg.com/stores/mojos-thongsala" target="_blank" rel="noopener"><span>Thong Sala</span><small>12:00 to 22:00</small><span class="sr-only"> (opens KPG Delivery in a new tab)</span></a>
   </div>
 </dialog>
 

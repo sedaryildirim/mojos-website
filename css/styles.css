@@ -280,6 +280,7 @@ html:not(.js) .menu__tabs, html:not(.js) .mode, html:not(.js) .burger { display:
 .chooser__x { position: absolute; right: 10px; top: 12px; }
 .chooser__x button { width: 48px; height: 48px; border: 0; background: none; color: var(--soft); font: 300 2rem/1 var(--cond); cursor: pointer; }
 .chooser__h { font: 400 2.8rem/.95 var(--display); letter-spacing: .02em; margin-bottom: 10px; }
+.chooser__lede { color: var(--soft); }
 .chooser__isle { margin-top: 26px; }
 .chooser__isle p { font: 500 .8rem/1 var(--cond); letter-spacing: .26em; text-transform: uppercase; color: var(--mute); margin-bottom: 4px; }
 .chooser__isle p b { color: var(--white); font-weight: 500; }
