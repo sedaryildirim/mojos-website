@@ -3,6 +3,8 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  // marked here, not in the head: if this file fails to load, the page stays the complete scripts-off page
+  document.documentElement.classList.add('js');
   document.documentElement.classList.toggle('motion', !reduce);
 
   /* ---------- Dark (Neon diner) / light (Cream) mode ----------
@@ -28,7 +30,7 @@
   /* ---------- Order chooser ---------- */
   const chooser = $('#chooser');
   // these are links to #order, so without scripts they still go somewhere useful
-  $$('[data-open-order]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); chooser.showModal(); }));
+  $$('[data-open-order]').forEach(b => b.addEventListener('click', e => { if (chooser.showModal) { e.preventDefault(); chooser.showModal(); } }));
   chooser.addEventListener('click', e => { if (e.target === chooser) chooser.close(); });
 
   /* ---------- Menu: tabs over the typographic list (the menu itself is in the HTML; scripts off, every section shows) ---------- */
@@ -178,7 +180,11 @@
 
 /* Logo drop: runs once on load (reduced motion: nothing moves) */
 (() => {
-  const html = document.documentElement; if (html.classList.contains('motion')) html.classList.add('drop');
+  const html = document.documentElement, logo = document.querySelector('.hero__logo');
+  if (!html.classList.contains('motion') || !logo) return;
+  // slow data: drop only if it can start in the first two seconds; later, the visitor is already reading and the page stays still
+  const go = () => { if (performance.now() < 2000) html.classList.add('drop'); };
+  if (logo.complete) go(); else logo.addEventListener('load', go, { once: true });
 })();
 
 /* Swipe hint on the branches run: one small nudge when it comes into view, gone once you swipe; the edge fade goes at the end.
