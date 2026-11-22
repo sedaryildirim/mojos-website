@@ -10,6 +10,10 @@
 <link rel="preload" href="img/mojos-logo-white-1960.png" as="image" fetchpriority="high">
 <script>/* dark mode = Neon diner, light mode = Cream: follows the phone or computer setting unless the visitor picks one */
 try { var pal = localStorage.getItem("mojos-mode"); if (pal !== "diner" && pal !== "cream") pal = matchMedia("(prefers-color-scheme: light)").matches ? "cream" : "diner"; document.documentElement.dataset.palette = pal; } catch (e) {}</script>
+<script>/* until main.js runs: the parts the logo drop animates stay hidden, and the floating Order now waits, so a phone does not draw
+   them, take them away and bring them back (owner, 22 Nov 2026). Both are lifted after 2.5 s whatever happens, so a failed script never hides them */
+(function () { var h = document.documentElement; h.classList.add("fab-wait"); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) h.classList.add("pre-drop");
+  setTimeout(function () { h.classList.remove("pre-drop", "fab-wait"); }, 2500); })();</script>
 </head>
 <body>
 <a class="skip" href="#menu">Skip to the menu</a>

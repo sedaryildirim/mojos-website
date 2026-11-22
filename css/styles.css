@@ -419,6 +419,9 @@ html.menu-open { overflow: hidden; }
   72%  { transform: translate3d(-2px, 2px, 0); }
   100% { transform: none; }
 }
+/* before the drop starts (index.html head, main.js): nothing the drop animates is drawn yet, and the floating Order now waits for its first check */
+.pre-drop .hero__logo, .pre-drop .sig__dash, .pre-drop .sig__tag, .pre-drop .hero__count, .pre-drop .hero__cta { opacity: 0; }
+.fab-wait .fab { visibility: hidden; transition: none; }
 /* the rest comes in once it has landed */
 .motion.drop .sig__dash { animation: draw .5s .95s cubic-bezier(.2, .9, .2, 1) both; }
 .motion.drop .sig__tag { animation: track 1.2s 1.25s var(--ease) backwards; }

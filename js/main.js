@@ -181,9 +181,9 @@
 /* Logo drop: runs once on load (reduced motion: nothing moves) */
 (() => {
   const html = document.documentElement, logo = document.querySelector('.hero__logo');
-  if (!html.classList.contains('motion') || !logo) return;
+  if (!html.classList.contains('motion') || !logo) { html.classList.remove('pre-drop'); return; }
   // slow data: drop only if it can start in the first two seconds; later, the visitor is already reading and the page stays still
-  const go = () => { if (performance.now() < 2000) html.classList.add('drop'); };
+  const go = () => { if (performance.now() < 2000) html.classList.add('drop'); html.classList.remove('pre-drop'); };
   if (logo.complete) go(); else logo.addEventListener('load', go, { once: true });
 })();
 
@@ -230,11 +230,13 @@
 
 /* Phones: the floating Order now steps aside while another Order now (the hero buttons, the Order section) or the footer is on screen */
 (() => {
-  const fab = document.querySelector('.fab'); if (!fab || !('IntersectionObserver' in window)) return;
+  const html = document.documentElement, fab = document.querySelector('.fab');
+  if (!fab || !('IntersectionObserver' in window)) { html.classList.remove('fab-wait'); return; }
   const on = new Set();
   const io = new IntersectionObserver(es => {
     es.forEach(e => e.isIntersecting ? on.add(e.target) : on.delete(e.target));
     fab.classList.toggle('is-away', on.size > 0);
+    requestAnimationFrame(() => html.classList.remove('fab-wait'));   // shown only once it knows whether to step aside
   });
   document.querySelectorAll('.hero__cta, .order__cols, .foot').forEach(el => io.observe(el));
 })();
