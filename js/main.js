@@ -111,27 +111,34 @@
   /* ---------- Landing 3: on scroll the signature scales down and docks into the header ---------- */
   const hero = $('.hero'), big = $('.sig__logo'), small = $('.top__logo img'), rest = $$('.sig__dash, .sig__tag, .hero__count, .hero__cta');
   const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  // touch screens: a phone runs scroll scripts only a few times a second (10 to 15 in Low Power Mode), so a logo that follows the scroll moves in steps.
+  // There it docks in one glide instead, on a CSS transition the phone animates by itself (styles.css, .sig-glide)
+  const glide = matchMedia('(pointer: coarse)').matches;
   let nat = null, ticking = false;
-  // the logo is pinned to the screen while it docks: phones scroll before scripts run, so holding it still against the scroll made it judder
-  const spot = document.createElement('div'); spot.style.flex = 'none'; big.before(spot);   // keeps its place on the page
-  const measure = () => { big.style.cssText = ''; spot.style.height = ''; const r = big.getBoundingClientRect(); nat = { x: r.left, y: r.top + scrollY, w: r.width };
-    spot.style.height = r.height + 'px'; Object.assign(big.style, { position: 'fixed', left: r.left + 'px', top: nat.y + 'px', width: r.width + 'px', margin: 0 }); };
-  root.classList.add('sig-dock');
+  // the logo is pinned to the screen while it docks: phones scroll before scripts run, so holding it still against the scroll made it judder.
+  // An empty box of the same size (styles.css, .sig__spot) keeps its place on the page, and is what gets measured, so measuring never disturbs the logo
+  const spot = document.createElement('div'); spot.className = 'sig__spot'; big.before(spot); Object.assign(big.style, { position: 'fixed', margin: 0 });
+  const measure = () => { const r = spot.getBoundingClientRect(); nat = { x: r.left, y: r.top + scrollY, w: r.width };
+    Object.assign(big.style, { left: r.left + 'px', top: nat.y + 'px', width: r.width + 'px' }); };
+  root.classList.add('sig-dock'); root.classList.toggle('sig-glide', glide);
   function frame() {
     ticking = false;
     if (!nat) measure();
-    const t = small.getBoundingClientRect(), p = clamp(scrollY / (hero.offsetHeight * .7)), e = ease(p);
+    const t = small.getBoundingClientRect(), p = glide ? +(scrollY > 40) : clamp(scrollY / (hero.offsetHeight * .7)), e = ease(p);
     const s = 1 + (t.width / nat.w - 1) * e;
     // pinned at its place at the top of the page; glide it to the header logo
     big.style.transform = `translate3d(${(t.left - nat.x) * e}px, ${(t.top - nat.y) * e}px, 0) scale(${s})`;
     const done = p >= 1;
     big.style.visibility = done ? 'hidden' : '';
     small.parentElement.style.opacity = done ? 1 : 0;
+    root.classList.toggle('sig-docked', done);
     small.parentElement.inert = !done;   // not focusable while it is hidden at the top
     rest.forEach(el => { el.style.opacity = 1 - clamp(p / .35); });
   }
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
-  addEventListener('resize', () => { scrollTo(0, scrollY); nat = null; requestAnimationFrame(frame); });
+  // measured again whenever its place can have moved: the window changes (on phones the browser's toolbars sliding away do that mid-scroll, so nothing here may move the page), the page finishes loading, the intro ends
+  const again = () => { nat = null; requestAnimationFrame(frame); };
+  addEventListener('resize', again); addEventListener('load', again); hero.addEventListener('animationend', again);
   frame();
 })();
 

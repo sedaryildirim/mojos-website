@@ -92,7 +92,9 @@ section, [id] { scroll-margin-top: var(--hh); }
 /* ---------- Landing 3: signature, exactly one viewport ---------- */
 .hero { position: relative; height: 100vh; height: 100svh; overflow: hidden; }
 .sig { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: var(--hh) var(--pad) max(30px, 5vh); }
-.sig__logo { position: relative; z-index: 60; width: min(78vw, 46vh * 2.15, 980px); transform-origin: 0 0; will-change: transform; }
+.sig__logo { position: relative; z-index: 60; transform-origin: 0 0; will-change: transform; }
+.sig__logo, .sig__spot { width: min(78vw, 46vh * 2.15, 980px); }
+.sig__spot { flex: none; aspect-ratio: 1960 / 911; }   /* main.js: keeps the logo's place on the page while the logo is pinned to the screen */
 .hero__logo { width: 100%; }
 .sig__dash { display: block; width: min(16vw, 150px); height: 3px; margin: clamp(14px, 2.5vh, 26px) 0 clamp(26px, 5vh, 54px); background: var(--red); transform-origin: center; }
 .sig__tag { font: 300 clamp(.95rem, 1.6vw, 1.25rem)/1 var(--cond); letter-spacing: .6em; text-transform: uppercase; padding-left: .6em; color: var(--white); }
@@ -107,9 +109,14 @@ section, [id] { scroll-margin-top: var(--hh); }
 .motion .hero__logo { -webkit-mask-image: linear-gradient(100deg, #000 46%, transparent 54%); mask-image: linear-gradient(100deg, #000 46%, transparent 54%);
   -webkit-mask-size: 260% 100%; mask-size: 260% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; animation: write 2.2s .2s cubic-bezier(.45,.05,.25,1) both; }
 @keyframes write { from { -webkit-mask-position: 100% 0; mask-position: 100% 0; } to { -webkit-mask-position: 0 0; mask-position: 0 0; } }
-@keyframes track { from { opacity: 0; letter-spacing: 1.2em; } }
+@keyframes track { from { opacity: 0; letter-spacing: 1.2em; white-space: nowrap; } to { white-space: nowrap; } }   /* one line throughout: on phones the wide spacing wrapped it, which moved the logo's place */
 /* the header logo waits until the big one has docked */
 .motion.sig-dock .top__logo { opacity: 0; }
+/* Touch screens (main.js): the logo docks in one glide and the lines under it fade, on transitions the phone animates by itself.
+   Following the scroll from a script, as on desktop, moves in steps there */
+.sig-glide .sig__logo { transition: transform .6s var(--ease), visibility .6s; }
+.sig-glide :is(.sig__dash, .sig__tag, .hero__count, .hero__cta) { transition: opacity .3s; }
+.sig-glide.sig-docked .top__logo { transition: opacity .01s .55s; }   /* shows as the big one lands; leaves at once on the way back */
 @keyframes draw { from { transform: scaleX(0); } }
 @keyframes fade { from { opacity: 0; } }
 @keyframes fade-up { from { opacity: 0; transform: translateY(16px); } }
@@ -338,7 +345,7 @@ html.lenis, html.lenis body { height: auto; }
   .top__logo { width: 76px; }
   .top__order { min-height: 36px; }
   .sig { padding: calc(var(--hh) + 10px) var(--pad) 18px; }
-  .sig__logo { width: min(60vw, 30vh * 2.15); }
+  .sig__logo, .sig__spot { width: min(60vw, 30vh * 2.15); }
   .sig__dash { margin: 8px 0 14px; }
   .hero__count { margin: 10px 0 14px; }
   .hero__cta .btn { min-height: 44px; }
