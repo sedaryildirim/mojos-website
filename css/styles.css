@@ -117,6 +117,7 @@ section, [id] { scroll-margin-top: var(--hh); }
 .sig-glide .sig__logo { transition: transform .6s var(--ease), visibility .6s; }
 .sig-glide :is(.sig__dash, .sig__tag, .hero__count, .hero__cta) { transition: opacity .3s; }
 .sig-glide.sig-docked .top__logo { transition: opacity .01s .55s; }   /* shows as the big one lands; leaves at once on the way back */
+.sig-glide .hero { isolation: auto; }   /* so the gliding logo lands on top of the header bar, not under it; the photo still sits behind the hero */
 @keyframes draw { from { transform: scaleX(0); } }
 @keyframes fade { from { opacity: 0; } }
 @keyframes fade-up { from { opacity: 0; transform: translateY(16px); } }
