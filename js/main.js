@@ -112,15 +112,18 @@
   const hero = $('.hero'), big = $('.sig__logo'), small = $('.top__logo img'), rest = $$('.sig__dash, .sig__tag, .hero__count, .hero__cta');
   const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
   let nat = null, ticking = false;
-  const measure = () => { big.style.transform = ''; const r = big.getBoundingClientRect(); nat = { x: r.left, y: r.top + scrollY, w: r.width }; };
+  // the logo is pinned to the screen while it docks: phones scroll before scripts run, so holding it still against the scroll made it judder
+  const spot = document.createElement('div'); spot.style.flex = 'none'; big.before(spot);   // keeps its place on the page
+  const measure = () => { big.style.cssText = ''; spot.style.height = ''; const r = big.getBoundingClientRect(); nat = { x: r.left, y: r.top + scrollY, w: r.width };
+    spot.style.height = r.height + 'px'; Object.assign(big.style, { position: 'fixed', left: r.left + 'px', top: nat.y + 'px', width: r.width + 'px', margin: 0 }); };
   root.classList.add('sig-dock');
   function frame() {
     ticking = false;
     if (!nat) measure();
     const t = small.getBoundingClientRect(), p = clamp(scrollY / (hero.offsetHeight * .7)), e = ease(p);
     const s = 1 + (t.width / nat.w - 1) * e;
-    // in-flow position is nat.y - scrollY; hold it still against the scroll and glide it to the header logo
-    big.style.transform = `translate3d(${(t.left - nat.x) * e}px, ${(t.top - nat.y) * e + scrollY}px, 0) scale(${s})`;
+    // pinned at its place at the top of the page; glide it to the header logo
+    big.style.transform = `translate3d(${(t.left - nat.x) * e}px, ${(t.top - nat.y) * e}px, 0) scale(${s})`;
     const done = p >= 1;
     big.style.visibility = done ? 'hidden' : '';
     small.parentElement.style.opacity = done ? 1 : 0;
@@ -144,7 +147,7 @@
 
 /* Hero photo parallax: the photo moves slower than the page and zooms a little; still with reduced motion */
 (() => {
-  const wrap = document.querySelector('.hero__photo'); if (!wrap || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const wrap = document.querySelector('.hero__photo'); if (!wrap || matchMedia('(prefers-reduced-motion: reduce), (pointer: coarse)').matches) return;   // phones: no parallax, it lags behind their scrolling
   const hero = wrap.parentElement; let queued = false;
   const move = () => { queued = false; const y = Math.min(scrollY, hero.offsetHeight);
     wrap.style.transform = `translate3d(0, ${y * 0.35}px, 0) scale(${1 + y / hero.offsetHeight * 0.06})`; };

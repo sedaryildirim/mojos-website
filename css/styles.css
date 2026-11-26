@@ -409,7 +409,7 @@ html.menu-open { overflow: hidden; }
   88%  { transform: scale(.99); }
   100% { transform: none; opacity: 1; }
 }
-.motion.drop .hero { animation: shake .6s .78s both; }
+.motion.drop .hero { animation: shake .6s .78s; }   /* no fill: a held transform, even none, would stop the docking logo staying pinned */
 @keyframes shake {
   0%   { transform: translate3d(0, 0, 0); }
   12%  { transform: translate3d(-12px, 9px, 0) rotate(-.6deg); }
